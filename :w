@@ -1,0 +1,30 @@
+#include<iostream>
+
+using namespace std;
+
+class Singleton
+{
+public:
+static Singleton& Instance();
+
+private:
+Singleton();
+Singleton(const Singleton&);
+Singleton& operator=(const Singleton&);
+static Singleton*  p_Instance;
+};
+
+Singleton* Singleton::p_Instance = 0;
+Singleton& Singleton::Instance()
+{
+    if(!p_Instance)
+    	p_Instance = new Singleton;
+    return *p_Instance;
+}
+
+int main()
+{
+
+return 1;
+}
+
